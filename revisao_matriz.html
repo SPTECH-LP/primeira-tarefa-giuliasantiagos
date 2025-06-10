@@ -100,13 +100,14 @@
 
 
     ////////// Montar matriz //////////
+
+        let contadorLinhas = 0;
+        let contadorColuna = 0;
+
     function montar() {
         let qtdLinhas = 3;
         let qtdColunas = 3;
         let valorInicial = 5;
-
-        let contadorLinhas = 0;
-        let contadorColuna = 0;
 
         for (let linha = 0; linha < qtdLinhas; linha++) {
             minhaMatriz[linha] = [];
@@ -115,14 +116,12 @@
                 minhaMatriz[linha][coluna] = valorInicial;
                 valorInicial += 5;
 
-                contadorLinhas += coluna[linha];
-                contadorColuna += minhaMatriz[linha];
+                contadorLinhas += [linha][coluna];
+                contadorColuna += [coluna][linha];
 
                 div_matriz.innerHTML += `<div class="item"> ${minhaMatriz[linha][coluna]} </div>`;
                 
             }
-
-
 
         }
         
